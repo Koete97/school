@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <link href="./output.css" rel="stylesheet">
+
+  <style>
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+    }
+
+    @keyframes slideOut {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      
+    }
+
+    .animation-slide {
+      animation-duration: 4s;
+      animation-fill-mode: both;
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+    <nav class="h-[80px] shadow-md">
+      <div class="flex lg:hidden">
+        <button id="hamburger">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-10 h-10 mt-2 ml-64 stroke-blue-800
+            xxs:h-10 xxs:mt-2 xxs:ml-[300px] xxs:stroke-blue-800
+            xs:w-10 xs:h-10 xs:mt-2 xs:ml-[360px] xs:stroke-blue-800
+            sm:w-10 sm:h-10 sm:mt-2 sm:ml-64 sm:stroke-blue-800
+            md:w-10 md:h-10 md:mt-2 md:ml-[680px] md:stroke-blue-800
+            lg:w-10 lg:h-10 lg:mt-2 lg:ml-64 lg:stroke-blue-800">
+            <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
+          </svg>
+        </button>
+
+      </div>
+      <div class="hidden absolute right-12 top-6
+      xxs:hidden xxs:absolute xxs:right-12 xxs:top-6
+      xs:hidden xs:absolute xs:right-12 xs:top-6
+      sm:hidden sm:absolute sm:right-12 sm:top-6
+      md:hidden md:absolute md:right-12 md:top-6
+      lg:contents lg:absolute lg:right-12 lg:top-6">
+        <a class="text-xl text-gray-700 px-4" href="index.html">Home</a>
+        <a class="text-xl text-gray-700 px-4" href="about.html">About us</a>
+        <a class="text-xl text-white bg-gray-700 px-4 py-1 rounded-md" href="contacts.html">Contacts</a>
+      </div>
+      
+    </nav>
+    <div id="mobile-menu" class="hidden bg-white h-fit w-full md:w-[400px] mt-4 mb-4 ml-4 relative">
+      <a href="#" class="block text-xl text-blue-800 animation-slide">Home</a>
+      <a href="#" class="block text-xl text-blue-800 animation-slide">About us</a>
+      <a href="#" class="block text-xl text-blue-800 animation-slide">Contact us</a>
+    </div>
+
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('animation-slide');
+      });
+
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('animation-slide');
+          });
+        });
+    </script>
+  </header>
+  <main>
+    <section class="h-screen bg-gray-50">
+      <div class="bg-gray-800 h-screen
+      xxs:bg-gray-800 xxs:h-screen
+      xs:bg-gray-800 xs:h-screen
+      sm:bg-gray-800 sm:h-screen
+      md:bg-gray-800 md:h-screen
+      lg:bg-gradient-to-r lg:from-gray-800 lg:via-gray-800 lg:to-gray-100 lg:h-80 w-full mx-auto relative">
+        <img src="./img/hero.jpg" class="w-full h-full object-cover absolute mix-blend-overlay">
+        <div class="relative sm: w-full mx-auto h-[400px] shadow-md rounded-md
+        xxs:relative sm: xxs:w-full xxs:mx-auto xxs:h-[400px] xxs:shadow-md xxs:rounded-md
+        xs:relative sm: xs:w-full xs:mx-auto xs:h-[400px] xs:shadow-md xs:rounded-md
+        sm:relative sm: sm:w-full sm:mx-auto sm:h-[400px] sm:shadow-md sm:rounded-md
+        md:relative md:bg-transparent md:w-full md:mx-auto md:h-[400px] md:shadow-md md:rounded-md
+        lg:relative lg:bg-white lg:w-[800px] lg:mx-auto lg:h-[400px] lg:shadow-md lg:rounded-md lg:top-52">
+          <div>
+            <h1 class="text-center text-xl text-gray-100 font-semibold pt-24
+            xxs:text-center xxs:text-2xl xxs:text-gray-100 xxs:font-semibold xxs:pt-24
+            xs:text-center xs:text-2xl xs:text-gray-100 xs:font-semibold xs:pt-24
+            sm:text-center sm:text-4xl sm:text-gray-100 sm:font-semibold sm:pt-24
+            md:text-center md:text-5xl md:text-gray-100 md:font-semibold md:pt-24
+            lg:text-center lg:text-5xl lg:text-gray-700 lg:font-semibold lg:pt-5">Rainbow English Medium School</h1>
+            <h2 class="text-center text-base text-gray-200 pt-5
+            xxs:text-center xxs:text-xl xxs:text-gray-200 xxs:pt-5
+            xs:text-center xs:text-xl xs:text-gray-200 xs:pt-5
+            sm:text-center sm:text-3xl sm:text-gray-200 sm:pt-5
+            md:text-center md:text-3xl md:text-gray-200 md:pt-5
+            lg:text-center lg:text-3xl lg:text-blue-800 lg:font-semibold lg:pt-5">Sky is the limit</h2>
+          </div>
+          <p class="w-[300px] text-center text-gray-100 text-sm mx-auto pt-5
+          xxs:w-[300px] xxs:text-center xxs:text-gray-100 xxs:text-sm xxs:mx-auto xxs:pt-5
+          xs:w-[400px] xs:text-center xs:text-gray-100 xs:text-base xs:mx-auto xs:pt-5
+          sm:w-[500px] sm:text-center sm:text-gray-100 sm:text-xl sm:mx-auto sm:pt-5
+          md:w-[500px] md:text-center md:text-gray-100 md:text-xl md:mx-auto md:pt-5
+          lg:w-[500px] lg:text-center lg:text-gray-700 lg:text-xl lg:mx-auto lg:pt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ad eveniet et porro officiis, totam hic veritatis dolore quis dolorum consequuntur provident sed, officia itaque expedita molestiae iure! Officia, voluptatum.</p>
+          <div class="mt-10">
+            <a class="bg-blue-800 text-white py-2 px-8 rounded-md ml-24 mt-5 text-sm relative
+            xxs:bg-blue-800 xxs:text-white xxs:py-2 xxs:px-8 xxs:rounded-md xxs:ml-32 xxs:mt-5 xxs:text-sm xxs:relative
+            xs:bg-blue-800 xs:text-white xs:py-2 xs:px-8 xs:rounded-md xs:ml-36 xs:mt-5 xs:text-base xs:relative
+            sm:bg-blue-800 sm:text-white sm:py-3 sm:px-10 sm:rounded-md sm:ml-72 sm:mt-5 sm:text-xl sm:relative
+            md:bg-blue-800 md:text-white md:py-3 md:px-10 md:rounded-md md:ml-72 md:mt-5 md:text-xl md:relative
+            lg:bg-blue-800 lg:text-white lg:py-3 lg:px-10 lg:rounded-md lg:ml-72 lg:mt-5 lg:text-xl lg:relative" href="about.html">Read more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hidden
+    xxs:hidden
+    xs:hidden
+    sm:hidden
+    md:hidden
+    lg:h-screen lg:pt-48">
+      <div class="bg-gradient-to-r from-blue-800 via-blue-800 to-gray-100 h-80 w-[1100px] mx-auto relative">
+        <img src="./img/under.jpg" class="w-full h-full object-cover absolute mix-blend-overlay">
+        <h1 class="text-5xl text-white w-[700px] ml-10 pt-6">Good <span class="text-orange-500">educational</span> foundation is our mandate.</h1>
+        <p class="text-xl text-white mt-10 ml-10">Enrol your child so that they have a solid educational foundation</p>
+        <div class="mt-10 ml-52">
+          <a class="text-emerald-950 text-xl font-semibold bg-white px-12 py-3 rounded-md" href="contacts.html">Call us</a>
+        </div>
+      </div>
+    </section>
+    <section class="h-fit bg-gray-50
+    xxs:h-fit xxs:bg-gray-50
+    xs:h-fit xs:bg-gray-50
+    sm:h-fit sm:bg-gray-50
+    md:h-fit md:bg-gray-50
+    lg:h-screen lg:bg-gray-50">
+      <div class="block justify-between pt-36
+      xxs:block xxs:justify-between xxs:pt-36
+      xs:block xs:justify-between xs:pt-36
+      sm:block sm:justify-between sm:pt-36
+      md:block md:justify-between md:pt-36
+      lg:flex lg:justify-between lg:px-16 lg:pt-36">
+        <div class="w-[300px] h-[400px] bg-gradient-to-b from-white via-white to-gray-400 shadow-md mx-auto
+        xxs:w-[350px] xxs:h-[400px] xxs:bg-gradient-to-b xxs:from-white xxs:via-white xxs:to-gray-400 xxs:shadow-md xxs:mx-auto
+        xs:w-[400px] xs:h-[400px] xs:bg-gradient-to-b xs:from-white xs:via-white xs:to-gray-400 xs:shadow-md xs:mx-auto
+        sm:w-[450px] sm:h-[400px] sm:bg-gradient-to-b sm:from-white sm:via-white sm:to-gray-400 sm:shadow-md sm:mx-auto
+        md:w-[450px] md:h-[400px] md:bg-gradient-to-b md:from-white md:via-white md:to-gray-400 md:shadow-md md:mx-auto
+        lg:w-[350px] lg:h-[400px] lg:bg-gradient-to-br lg:from-white lg:via-white lg:to-gray-400 lg:shadow-md lg:mx-auto">
+          <h1 class="text-center text-2xl text-blue-800 font-semibold pt-5
+          xxs:text-center xxs:text-2xl xxs:text-blue-800 xxs:font-semibold xxs:pt-5
+          xs:text-center xs:text-2xl xs:text-blue-800 xs:font-semibold xs:pt-5
+          sm:text-center sm:text-3xl sm:text-blue-800 sm:font-semibold sm:pt-5
+          md:text-center md:text-3xl md:text-blue-800 md:font-semibold md:pt-5
+          lg:text-center lg:text-3xl lg:text-blue-800 lg:font-semibold lg:pt-5">Pre-school</h1>
+          <div class="bg-white w-[280px] mx-auto shadow-sm shadow-gray-400 h-[270px] rounded-md
+          xxs:bg-white xxs:w-[330px] xxs:mx-auto xxs:shadow-sm xxs:shadow-gray-400 xxs:h-[270px] xxs:rounded-md
+          xs:bg-white xs:w-[380px] xs:mx-auto xs:shadow-sm xs:shadow-gray-400 xs:h-[270px] xs:rounded-md
+          sm:bg-white sm:w-[430px] sm:mx-auto sm:shadow-sm sm:shadow-gray-400 sm:h-[270px] sm:rounded-md
+          md:bg-white md:w-[430px] md:mx-auto md:shadow-sm md:shadow-gray-400 md:h-[270px] md:rounded-md
+          lg:bg-white lg:w-[330px] lg:mx-auto lg:shadow-sm lg:shadow-gray-400 lg:h-[270px] lg:rounded-md">
+            <div class="flex ml-4 pt-4
+            xxs:flex xxs:ml-11 xxs:pt-4
+            xs:flex xs:ml-11 xs:pt-4
+            sm:flex sm:ml-11 sm:pt-4
+            md:flex md:ml-11 md:pt-4
+            lg:flex lg:ml-8 lg:pt-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="w-10 h-10 stroke-blue-800
+                xxs:w-10 xxs:h-10 xxs:stroke-blue-800
+                xs:w-10 xs:h-10 xs:stroke-blue-800
+                sm:w-10 sm:h-10 sm:stroke-blue-800
+                md:w-10 md:h-10 md:stroke-blue-800
+                lg:w-10 lg:h-10 lg:stroke-blue-800">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p class="text-base text-emerald-950 ml-6 mt-1
+              xxs:text-base xxs:text-emerald-950 xxs:ml-6 xxs:mt-1
+              xs:text-base xs:text-emerald-950 xs:ml-12 xs:mt-1
+              sm:text-xl sm:text-emerald-950 sm:ml-16 sm:mt-1
+              md:text-xl md:text-emerald-950 md:ml-16 md:mt-1
+              lg:text-xl lg:text-emerald-950 lg:ml-10 lg:mt-1">6:00 am to 14:00</p>
+            </div>
+            <p class="text-base text-gray-500 text-justify w-64 mx-auto mt-6
+            xxs:text-base xxs:text-gray-500 xxs:text-justify xxs:w-72 xxs:mx-auto xxs:mt-6
+            xs:text-base xs:text-gray-500 xs:text-justify xs:w-80 xs:mx-auto xs:mt-6
+            sm:text-xl sm:text-gray-500 sm:text-justify sm:w-80 sm:mx-auto sm:mt-6
+            md:text-xl md:text-gray-500 md:text-justify md:w-80 md:mx-auto md:mt-6
+            lg:text-xl lg:text-gray-500 lg:text-justify lg:w-72 lg:mx-auto lg:mt-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione repellat sapiente placeat dolorem.</p>
+            <div class="pt-8">
+              <a class="bg-blue-800 text-white px-10 py-2 mx-16 my-6 rounded-md text-base
+              xxs:bg-blue-800 xxs:text-white xxs:px-10 xxs:py-2 xxs:mx-24 xxs:my-6 xxs:rounded-md xxs:text-base
+              xs:bg-blue-800 xs:text-white xs:px-10 xs:py-2 xs:mx-32 xs:my-6 xs:rounded-md xs:text-base
+              sm:bg-blue-800 sm:text-white sm:px-12 sm:py-3 sm:mx-32 sm:my-6 sm:rounded-md sm:text-xl
+              md:bg-blue-800 md:text-white md:px-12 md:py-3 md:mx-32 md:my-6 md:rounded-md md:text-xl
+              lg:bg-blue-800 lg:text-white lg:px-12 lg:py-3 lg:mx-20 lg:my-6 lg:rounded-md lg:text-xl" href="#">Enquire</a>
+            </div>
+          </div>
+        </div>
+        <div class="w-[300px] h-[400px] bg-gradient-to-b from-white via-white to-gray-400 shadow-md mx-auto
+        xxs:w-[350px] xxs:h-[400px] xxs:bg-gradient-to-b xxs:from-white xxs:via-white xxs:to-gray-400 xxs:shadow-md xxs:mx-auto
+        xs:w-[400px] xs:h-[400px] xs:bg-gradient-to-b xs:from-white xs:via-white xs:to-gray-400 xs:shadow-md xs:mx-auto
+        sm:w-[450px] sm:h-[400px] sm:bg-gradient-to-b sm:from-white sm:via-white sm:to-gray-400 sm:shadow-md sm:mx-auto
+        md:w-[450px] md:h-[400px] md:bg-gradient-to-b md:from-white md:via-white md:to-gray-400 md:shadow-md md:mx-auto
+        lg:w-[350px] lg:h-[400px] lg:bg-gradient-to-br lg:from-white lg:via-white lg:to-gray-400 lg:shadow-md lg:mx-auto">
+          <h1 class="text-center text-2xl text-blue-800 font-semibold pt-5
+          xxs:text-center xxs:text-2xl xxs:text-blue-800 xxs:font-semibold xxs:pt-5
+          xs:text-center xs:text-2xl xs:text-blue-800 xs:font-semibold xs:pt-5
+          sm:text-center sm:text-3xl sm:text-blue-800 sm:font-semibold sm:pt-5
+          md:text-center md:text-3xl md:text-blue-800 md:font-semibold md:pt-5
+          lg:text-center lg:text-3xl lg:text-blue-800 lg:font-semibold lg:pt-5">Aftercare</h1>
+          <div class="bg-white w-[280px] mx-auto shadow-sm shadow-gray-400 h-[270px] rounded-md
+          xxs:bg-white xxs:w-[330px] xxs:mx-auto xxs:shadow-sm xxs:shadow-gray-400 xxs:h-[270px] xxs:rounded-md
+          xs:bg-white xs:w-[380px] xs:mx-auto xs:shadow-sm xs:shadow-gray-400 xs:h-[270px] xs:rounded-md
+          sm:bg-white sm:w-[430px] sm:mx-auto sm:shadow-sm sm:shadow-gray-400 sm:h-[270px] sm:rounded-md
+          md:bg-white md:w-[430px] md:mx-auto md:shadow-sm md:shadow-gray-400 md:h-[270px] md:rounded-md
+          lg:bg-white lg:w-[330px] lg:mx-auto lg:shadow-sm lg:shadow-gray-400 lg:h-[270px] lg:rounded-md">
+            <div class="flex ml-4 pt-4
+            xxs:flex xxs:ml-11 xxs:pt-4
+            xs:flex xs:ml-11 xs:pt-4
+            sm:flex sm:ml-11 sm:pt-4
+            md:flex md:ml-11 md:pt-4
+            lg:flex lg:ml-8 lg:pt-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="w-10 h-10 stroke-blue-800
+                xxs:w-10 xxs:h-10 xxs:stroke-blue-800
+                xs:w-10 xs:h-10 xs:stroke-blue-800
+                sm:w-10 sm:h-10 sm:stroke-blue-800
+                md:w-10 md:h-10 md:stroke-blue-800
+                lg:w-10 lg:h-10 lg:stroke-blue-800">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p class="text-base text-emerald-950 ml-6 mt-1
+              xxs:text-base xxs:text-emerald-950 xxs:ml-6 xxs:mt-1
+              xs:text-base xs:text-emerald-950 xs:ml-12 xs:mt-1
+              sm:text-xl sm:text-emerald-950 sm:ml-16 sm:mt-1
+              md:text-xl md:text-emerald-950 md:ml-16 md:mt-1
+              lg:text-xl lg:text-emerald-950 lg:ml-10 lg:mt-1">14:00 to 18:00</p>
+            </div>
+            <p class="text-base text-gray-500 text-justify w-64 mx-auto mt-6
+            xxs:text-base xxs:text-gray-500 xxs:text-justify xxs:w-72 xxs:mx-auto xxs:mt-6
+            xs:text-base xs:text-gray-500 xs:text-justify xs:w-80 xs:mx-auto xs:mt-6
+            sm:text-xl sm:text-gray-500 sm:text-justify sm:w-80 sm:mx-auto sm:mt-6
+            md:text-xl md:text-gray-500 md:text-justify md:w-80 md:mx-auto md:mt-6
+            lg:text-xl lg:text-gray-500 lg:text-justify lg:w-72 lg:mx-auto lg:mt-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos labore itaque suscipit doloribus.</p>
+            <div class="pt-8">
+              <a class="bg-blue-800 text-white px-10 py-2 mx-16 my-6 rounded-md text-base
+              xxs:bg-blue-800 xxs:text-white xxs:px-10 xxs:py-2 xxs:mx-24 xxs:my-6 xxs:rounded-md xxs:text-base
+              xs:bg-blue-800 xs:text-white xs:px-10 xs:py-2 xs:mx-32 xs:my-6 xs:rounded-md xs:text-base
+              sm:bg-blue-800 sm:text-white sm:px-12 sm:py-3 sm:mx-32 sm:my-6 sm:rounded-md sm:text-xl
+              md:bg-blue-800 md:text-white md:px-12 md:py-3 md:mx-32 md:my-6 md:rounded-md md:text-xl
+              lg:bg-blue-800 lg:text-white lg:px-12 lg:py-3 lg:mx-20 lg:my-6 lg:rounded-md lg:text-xl" href="#">Enquire</a>
+            </div>
+          </div>
+        </div>
+        <div class="w-[300px] h-[400px] bg-gradient-to-b from-white via-white to-gray-400 shadow-md mx-auto
+        xxs:w-[350px] xxs:h-[400px] xxs:bg-gradient-to-b xxs:from-white xxs:via-white xxs:to-gray-400 xxs:shadow-md xxs:mx-auto
+        xs:w-[400px] xs:h-[400px] xs:bg-gradient-to-b xs:from-white xs:via-white xs:to-gray-400 xs:shadow-md xs:mx-auto
+        sm:w-[450px] sm:h-[400px] sm:bg-gradient-to-b sm:from-white sm:via-white sm:to-gray-400 sm:shadow-md sm:mx-auto
+        md:w-[450px] md:h-[400px] md:bg-gradient-to-b md:from-white md:via-white md:to-gray-400 md:shadow-md md:mx-auto
+        lg:w-[350px] lg:h-[400px] lg:bg-gradient-to-br lg:from-white lg:via-white lg:to-gray-400 lg:shadow-md lg:mx-auto">
+          <h1 class="text-center text-2xl text-blue-800 font-semibold pt-5
+          xxs:text-center xxs:text-2xl xxs:text-blue-800 xxs:font-semibold xxs:pt-5
+          xs:text-center xs:text-2xl xs:text-blue-800 xs:font-semibold xs:pt-5
+          sm:text-center sm:text-3xl sm:text-blue-800 sm:font-semibold sm:pt-5
+          md:text-center md:text-3xl md:text-blue-800 md:font-semibold md:pt-5
+          lg:text-center lg:text-3xl lg:text-blue-800 lg:font-semibold lg:pt-5">Primary school</h1>
+          <div class="bg-white w-[280px] mx-auto shadow-sm shadow-gray-400 h-[270px] rounded-md
+          xxs:bg-white xxs:w-[330px] xxs:mx-auto xxs:shadow-sm xxs:shadow-gray-400 xxs:h-[270px] xxs:rounded-md
+          xs:bg-white xs:w-[380px] xs:mx-auto xs:shadow-sm xs:shadow-gray-400 xs:h-[270px] xs:rounded-md
+          sm:bg-white sm:w-[430px] sm:mx-auto sm:shadow-sm sm:shadow-gray-400 sm:h-[270px] sm:rounded-md
+          md:bg-white md:w-[430px] md:mx-auto md:shadow-sm md:shadow-gray-400 md:h-[270px] md:rounded-md
+          lg:bg-white lg:w-[330px] lg:mx-auto lg:shadow-sm lg:shadow-gray-400 lg:h-[270px] lg:rounded-md">
+            <div class="flex ml-4 pt-4
+            xxs:flex xxs:ml-11 xxs:pt-4
+            xs:flex xs:ml-11 xs:pt-4
+            sm:flex sm:ml-11 sm:pt-4
+            md:flex md:ml-11 md:pt-4
+            lg:flex lg:ml-8 lg:pt-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="w-10 h-10 stroke-blue-800
+                xxs:w-10 xxs:h-10 xxs:stroke-blue-800
+                xs:w-10 xs:h-10 xs:stroke-blue-800
+                sm:w-10 sm:h-10 sm:stroke-blue-800
+                md:w-10 md:h-10 md:stroke-blue-800
+                lg:w-10 lg:h-10 lg:stroke-blue-800">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p class="text-base text-emerald-950 ml-6 mt-1
+              xxs:text-base xxs:text-emerald-950 xxs:ml-6 xxs:mt-1
+              xs:text-base xs:text-emerald-950 xs:ml-12 xs:mt-1
+              sm:text-xl sm:text-emerald-950 sm:ml-16 sm:mt-1
+              md:text-xl md:text-emerald-950 md:ml-16 md:mt-1
+              lg:text-xl lg:text-emerald-950 lg:ml-10 lg:mt-1">6:00 am to 16:00</p>
+            </div>
+            <p class="text-base text-gray-500 text-justify w-64 mx-auto mt-6
+            xxs:text-base xxs:text-gray-500 xxs:text-justify xxs:w-72 xxs:mx-auto xxs:mt-6
+            xs:text-base xs:text-gray-500 xs:text-justify xs:w-80 xs:mx-auto xs:mt-6
+            sm:text-xl sm:text-gray-500 sm:text-justify sm:w-80 sm:mx-auto sm:mt-6
+            md:text-xl md:text-gray-500 md:text-justify md:w-80 md:mx-auto md:mt-6
+            lg:text-xl lg:text-gray-500 lg:text-justify lg:w-72 lg:mx-auto lg:mt-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione repellat sapiente placeat dolorem.</p>
+            <div class="pt-8">
+              <a class="bg-blue-800 text-white px-10 py-2 mx-16 my-6 rounded-md text-base
+              xxs:bg-blue-800 xxs:text-white xxs:px-10 xxs:py-2 xxs:mx-24 xxs:my-6 xxs:rounded-md xxs:text-base
+              xs:bg-blue-800 xs:text-white xs:px-10 xs:py-2 xs:mx-32 xs:my-6 xs:rounded-md xs:text-base
+              sm:bg-blue-800 sm:text-white sm:px-12 sm:py-3 sm:mx-32 sm:my-6 sm:rounded-md sm:text-xl
+              md:bg-blue-800 md:text-white md:px-12 md:py-3 md:mx-32 md:my-6 md:rounded-md md:text-xl
+              lg:bg-blue-800 lg:text-white lg:px-12 lg:py-3 lg:mx-20 lg:my-6 lg:rounded-md lg:text-xl" href="#">Enquire</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="h-fit w-screen
+    xxs:h-fit xxs:w-screen
+    xs:h-fit xs:w-screen
+    sm:h-fit sm:w-screen
+    md:h-fit md:w-screen
+    lg:h-screen lg:w-screen">
+      <div>
+        <h1 class="text-2xl text-gray-500 font-semibold mt-16 text-center
+        xxs:text-2xl xxs:text-gray-500 xxs:font-semibold xxs:mt-16 xxs:text-center
+        xs:text-3xl xs:text-gray-500 xs:font-semibold xs:mt-16 xs:text-center
+        sm:text-5xl sm:text-gray-500 sm:font-semibold sm:mt-16 sm:text-center
+        md:text-5xl md:text-gray-500 md:font-semibold md:mt-16 md:text-center
+        lg:text-5xl lg:text-gray-500 lg:font-semibold lg:mt-16 lg:text-center">Feedback from 50+ <span class="text-blue-800">Parents</span></h1>
+      </div>
+      <div class="block ml-2 pt-4
+      xxs:block xxs:ml-2 xxs:pt-6
+      xs:flex xs:ml-2 xs:pt-16
+      sm:flex sm:ml-14 sm:pt-16
+      md:flex md:ml-20 md:pt-16
+      lg:flex lg:ml-56 lg:pt-16">
+        <div>
+          <img class="w-16 h-16 mt-14 ml-2 rounded-full
+          xxs:w-20 xxs:h-20 xxs:mt-14 xxs:ml-6 xxs:rounded-full
+          xs:w-20 xs:h-20 xs:mt-14 xs:ml-0 xs:rounded-full
+          sm:w-20 sm:h-20 sm:mt-14 sm:ml-0 sm:rounded-full
+          md:w-20 md:h-20 md:mt-14 md:ml-0 md:rounded-full
+          lg:w-32 lg:h-32 lg:mt-0 lg:ml-0 lg:rounded-full" src="./img/parent.jpeg">
+        </div>
+        <div>
+          <h1 class="ml-2 text-xl text-blue-800 font-semibold
+          xxs:ml-6 xxs:text-xl xxs:text-blue-800 xxs:font-semibold
+          xs:ml-6 xs:text-xl xs:text-blue-800 xs:font-semibold
+          sm:ml-11 sm:text-xl sm:text-blue-800 sm:font-semibold
+          md:ml-11 md:text-xl md:text-blue-800 md:font-semibold
+          lg:ml-11 lg:text-xl lg:text-blue-800 lg:font-semibold">Mrs Mabotle</h1>
+          <p class="w-[220px] text-base text-gray-600 ml-2 mt-6
+          xxs:w-[300px] xxs:text-base xxs:text-gray-600 xxs:ml-2 xxs:mt-6
+          xs:w-[300px] xs:text-base xs:text-gray-600 xs:ml-6 xs:mt-6
+          sm:w-[500px] sm:text-xl sm:text-gray-600 sm:ml-11 sm:mt-6
+          md:w-[500px] md:text-xl md:text-gray-600 md:ml-11 md:mt-6
+          lg:w-[700px] lg:text-xl lg:text-gray-600 lg:ml-11 lg:mt-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur possimus delectus sunt nostrum maiores culpa, iusto explicabo distinctio eius optio error soluta, voluptatum eum excepturi ipsa ad quis, ab eligendi!</p>
+        </div>
+      </div>
+      <div class="block ml-2 pt-4
+      xxs:block xxs:ml-2 xxs:pt-6
+      xs:flex xs:ml-2 xs:pt-16
+      sm:flex sm:ml-14 sm:pt-16
+      md:flex md:ml-20 md:pt-16
+      lg:flex lg:ml-56 lg:pt-16">
+        <div>
+          <img class="w-16 h-16 mt-14 ml-2 rounded-full
+          xxs:w-20 xxs:h-20 xxs:mt-14 xxs:ml-6 xxs:rounded-full
+          xs:w-20 xs:h-20 xs:mt-14 xs:ml-0 xs:rounded-full
+          sm:w-20 sm:h-20 sm:mt-14 sm:ml-0 sm:rounded-full
+          md:w-20 md:h-20 md:mt-14 md:ml-0 md:rounded-full
+          lg:w-32 lg:h-32 lg:mt-0 lg:ml-0 lg:rounded-full" src="./img/parent1.jpeg">
+        </div>
+        <div>
+          <h1 class="ml-2 text-xl text-blue-800 font-semibold
+          xxs:ml-6 xxs:text-xl xxs:text-blue-800 xxs:font-semibold
+          xs:ml-6 xs:text-xl xs:text-blue-800 xs:font-semibold
+          sm:ml-11 sm:text-xl sm:text-blue-800 sm:font-semibold
+          md:ml-11 md:text-xl md:text-blue-800 md:font-semibold
+          lg:ml-11 lg:text-xl lg:text-blue-800 lg:font-semibold">Mr Thabang</h1>
+          <p class="w-[220px] text-base text-gray-600 ml-2 mt-6
+          xxs:w-[300px] xxs:text-base xxs:text-gray-600 xxs:ml-6 xxs:mt-6
+          xs:w-[300px] xs:text-base xs:text-gray-600 xs:ml-6 xs:mt-6
+          sm:w-[500px] sm:text-xl sm:text-gray-600 sm:ml-11 sm:mt-6
+          md:w-[500px] md:text-xl md:text-gray-600 md:ml-11 md:mt-6
+          lg:w-[700px] lg:text-xl lg:text-gray-600 lg:ml-11 lg:mt-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur possimus delectus sunt nostrum maiores culpa, iusto explicabo distinctio eius optio error soluta, voluptatum eum excepturi ipsa ad quis, ab eligendi!</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  <footer class="h-fit bg-gray-700
+  xxs:h-fit xxs:bg-gray-700
+  xs:h-fit xs:bg-gray-700
+  sm:h-60 sm:bg-gray-700
+  md:h-60 md:bg-gray-700
+  lg:h-60 lg:bg-gray-700">
+    <div class="grid grid-cols-1 pt-12 ml-24
+    xxs:grid xxs:grid-cols-1 xxs:pt-12 xxs:ml-24
+    xs:grid xs:grid-cols-1 xs:pt-12 xs:ml-32
+    sm:grid sm:grid-cols-3 sm:pt-12 sm:ml-24
+    md:grid md:grid-cols-3 md:pt-12 md:ml-40
+    lg:grid lg:grid-cols-3 lg:pt-12 lg:ml-52">
+      <div class="block">
+        <h1 class="text-2xl text-gray-300 underline">Essential links</h1>
+        <li class="list-none mt-3"><a class="text-gray-300" href="#">Gallery</a></li>
+        <li class="list-none"><a class="text-gray-300" href="#">Notices</a></li>
+        <li class="list-none"><a class="text-gray-300" href="#">Carrier Oppotunities</a></li>
+      </div>
+      <div>
+        <h1 class="text-2xl text-gray-300 underline">RMES</h1>
+        <li class="list-none mt-3"><a class="text-gray-300" href="#">Home</a></li>
+        <li class="list-none"><a class="text-gray-300" href="#">About us</a></li>
+        <li class="list-none"><a class="text-gray-300" href="#">Contact us</a></li>
+      </div>
+      <div>
+        <h1 class="text-2xl text-gray-300 underline">Contacts</h1>
+        <li class="list-none mt-3"><a class="text-gray-300" href="#">Maseru, Tsoapos</a></li>
+        <li class="list-none"><a class="text-gray-300" href="#">+266 58748452</a></li>
+        <li class="list-none"><a class="text-gray-300" href="#">RMES@gmail.com</a></li>
+      </div>
+
+    </div>
+
+  </footer>
+  
+</body>
+</html>
