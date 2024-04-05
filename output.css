@@ -788,6 +788,10 @@ video {
   margin-left: 60%;
 }
 
+.ml-40 {
+  margin-left: 10rem;
+}
+
 .block {
   display: block;
 }
