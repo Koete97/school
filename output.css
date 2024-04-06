@@ -854,6 +854,10 @@ video {
   margin-bottom: 3rem;
 }
 
+.mr-9 {
+  margin-right: 2.25rem;
+}
+
 .block {
   display: block;
 }
@@ -1033,6 +1037,10 @@ video {
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
